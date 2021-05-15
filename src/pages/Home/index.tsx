@@ -4,24 +4,37 @@ import cn from 'classnames';
 import hs from './Home.module.scss';
 import as from '../../App.module.scss';
 
+import Layout from '../../components/Layout';
+import Heading from '../../components/Heading';
+import Button, { ButtonSize } from '../../components/Button';
+import Parallax from '../../components/Parallax';
 import Footer from '../../components/Footer';
+
+function handleClick() {
+  console.log('handleClick');
+}
 
 const HomePage: React.FC = () => {
   return (
     <div className={hs.content__wrapper}>
-      <div className={cn(as.container)}>
+      <Layout className={cn(as.container)}>
         <div className={hs.content__home}>
           <div className={hs.content__text}>
-            <h1 className={hs.content__title}>
+            <Heading tag="h1" propsClassName={hs.content__title}>
               <strong>Find</strong> all your favorite <strong>Pokemon</strong>
-            </h1>
-            <h2 className={hs.content__subtitle}>
+            </Heading>
+            <Heading tag="h2" propsClassName={hs.content__subtitle}>
               You can know the type of Pokemon, its strengths, disadvantages and abilities
-            </h2>
-            <button type="button">See pokemons</button>
+            </Heading>
+            <div className={hs.contentBtn}>
+              <Button onClick={handleClick} type="button" color="green" size={ButtonSize.medium}>
+                See pokemons
+              </Button>
+            </div>
           </div>
+          <Parallax />
         </div>
-      </div>
+      </Layout>
       <Footer />
     </div>
   );

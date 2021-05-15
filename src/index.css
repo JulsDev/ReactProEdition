@@ -5,6 +5,15 @@ body {
   box-sizing: border-box;
 }
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: white;
+  font-size: 16px;
+  font-family: 'karla', sans-serif;
+  position: relative;
+}
+
 p,
 ul {
   margin: 0;
