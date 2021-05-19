@@ -1,0 +1,61 @@
+@import '../../styles/breakpoints';
+
+.root {
+  max-width: 793px;
+  width: 100%;
+  height: 680px;
+  position: relative;
+  margin-right: -159px;
+  order: 2;
+
+  @include media('<desktop') {
+    order: 1;
+    margin-right: 0;
+    height: 380px;
+  }
+}
+
+.smallPokeBall {
+  position: absolute;
+  top: 5.41%;
+  left: 7.84%;
+}
+
+.cloud {
+  position: absolute;
+  left: 6.31%;
+  bottom: 37.22%;
+}
+
+.cloudBig {
+  position: absolute;
+  left: 49.86%;
+  top: -3%;
+}
+
+.pokeBall {
+  position: absolute;
+  right: -6%;
+  top: 0%;
+
+  @include media('<desktop') {
+    right: -21%;
+  }
+}
+
+.pikachu {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  @include media('<desktop') {
+    left: 25%;
+  }
+}
+
+.pikachuImg {
+  width: 648px;
+  @include media('<desktop') {
+    max-width: 445px;
+    max-height: 445px;
+  }
+}

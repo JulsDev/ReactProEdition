@@ -5,3 +5,4 @@ dist/
 .DS_Store
 
 src/**.d.ts
+src/**/**.d.ts

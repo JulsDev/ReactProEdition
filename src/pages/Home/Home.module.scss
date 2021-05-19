@@ -1,0 +1,50 @@
+@import '../../styles/variables';
+@import '../../styles/breakpoints';
+
+.content__wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, $third 0%, $primary 100%);
+  overflow: hidden;
+}
+
+.content__home {
+  display: flex;
+  padding-top: 120px;
+
+  @include media('<desktop') {
+    flex-direction: column;
+    padding-top: 85px;
+  }
+}
+
+.content__text {
+  max-width: 515px;
+  order: 1;
+
+  @include media('<desktop') {
+    align-self: center;
+    text-align: center;
+    max-width: 730px;
+    order: 2;
+  }
+}
+
+.content__title,
+.content__subtitle {
+  margin-bottom: 44px;
+}
+
+.content__parallax {
+  width: 50%;
+}
+
+.contentBtn {
+  display: flex;
+
+  @include media('<desktop') {
+    justify-content: center;
+  }
+}
