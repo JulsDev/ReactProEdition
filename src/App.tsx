@@ -1,15 +1,13 @@
 import React from 'react';
+import { useRoutes } from 'hookrouter';
+import routes from './routes';
 
-import Header from './components/Header';
-import HomePage from './pages/Home';
+import ErrorPage from './pages/Error';
 
 const App = () => {
-  return (
-    <>
-      <Header />
-      <HomePage />
-    </>
-  );
+  const match = useRoutes(routes);
+
+  return match || <ErrorPage />;
 };
 
 export default App;
