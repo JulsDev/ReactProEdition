@@ -15,7 +15,7 @@ interface PokedexPageProps {
   title?: string;
 }
 
-const Pokedex: React.FC<PokedexPageProps> = ({ title }) => {
+const Pokedex: React.FC<PokedexPageProps> = () => {
   return (
     <>
       <Header />
@@ -27,7 +27,7 @@ const Pokedex: React.FC<PokedexPageProps> = ({ title }) => {
           <div className={ps.cardList}>
             {pokemons.map((item) => {
               return (
-                <div key={item} className={ps.cardWrapper}>
+                <div key={item.id} className={ps.cardWrapper}>
                   <PokemonCard pokemon={item} />
                 </div>
               );

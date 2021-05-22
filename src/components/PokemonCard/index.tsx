@@ -8,8 +8,8 @@ interface IStats {
   hp?: number;
   attack: number;
   defense: number;
-  specialAttack?: number;
-  specialDefense?: number;
+  special_attack?: number;
+  special_defense?: number;
   speed?: number;
 }
 
@@ -33,6 +33,8 @@ export interface IPokemonCardProps {
 }
 
 const PokemonCard: React.FC<IPokemonCardProps> = ({ pokemon }) => {
+  const typeList = pokemon?.types;
+
   return (
     <div className={s.root}>
       <div className={s.infoWrap}>
@@ -50,7 +52,10 @@ const PokemonCard: React.FC<IPokemonCardProps> = ({ pokemon }) => {
           </div>
         </div>
         <div className={s.labelWrap}>
-          <span className={s.label}>Fire</span>
+          {typeList &&
+            typeList.map((item) => {
+              return <span className={s.label}>{item}</span>;
+            })}
         </div>
       </div>
       <div className={s.pictureWrap}>
