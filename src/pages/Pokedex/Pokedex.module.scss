@@ -1,0 +1,24 @@
+.contentPokedex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 120px;
+}
+
+.mainTitle {
+  text-align: center;
+}
+
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cardWrapper {
+  display: flex;
+  margin-right: 21px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
