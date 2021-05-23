@@ -54,7 +54,11 @@ const PokemonCard: React.FC<IPokemonCardProps> = ({ pokemon }) => {
         <div className={s.labelWrap}>
           {typeList &&
             typeList.map((item) => {
-              return <span className={s.label}>{item}</span>;
+              return (
+                <span key={item} className={s.label}>
+                  {item}
+                </span>
+              );
             })}
         </div>
       </div>
