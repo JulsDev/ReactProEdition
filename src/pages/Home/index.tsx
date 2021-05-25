@@ -10,7 +10,6 @@ import Heading from '../../components/Heading';
 import Button, { ButtonSize } from '../../components/Button';
 import Parallax from '../../components/Parallax';
 import Footer from '../../components/Footer';
-import Header from '../../components/Header';
 
 import { LinkEnum } from '../../routes';
 
@@ -21,7 +20,6 @@ function handleClick() {
 const HomePage: React.FC = () => {
   return (
     <>
-      <Header />
       <div className={hs.content__wrapper}>
         <Layout className={cn(as.container)}>
           <div className={hs.content__home}>
