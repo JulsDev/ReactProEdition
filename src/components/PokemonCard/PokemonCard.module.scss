@@ -125,6 +125,13 @@
   padding: 30px 13px 20px 25px;
 }
 
+.modalClose {
+  cursor: pointer;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
 .modalImageWrap {
   max-width: 365px;
   height: 100%;
@@ -195,7 +202,14 @@
   max-width: 400px;
 }
 
-.skillsBlock {
+.modalPointLevel {
+  width: 137px;
+  height: 5px;
+  border-radius: 8px;
+  background: linear-gradient(270deg, #64d368 0.15%, #64d368 70.88%);
+}
+
+.skillsList {
   display: flex;
 }
 
@@ -214,6 +228,16 @@
   &:last-child {
     margin-right: 0;
   }
+}
+
+.skillsPoint {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modalPointsHealthy {
