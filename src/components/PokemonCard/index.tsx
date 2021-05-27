@@ -1,6 +1,10 @@
 /* eslint-disable camelcase */
-import React from 'react';
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useState } from 'react';
+
 import Heading from '../Heading';
+import PokemonDescription from '../PokemonDescription';
 
 import s from './PokemonCard.module.scss';
 
@@ -35,37 +39,48 @@ export interface IPokemonCardProps {
 const PokemonCard: React.FC<IPokemonCardProps> = ({ pokemon }) => {
   const typeList = pokemon?.types;
 
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  function selectedPokemonClick() {
+    setIsOpenModal(true);
+  }
+
+  const onCloseModal = () => setIsOpenModal(false);
+
   return (
-    <div className={s.root}>
-      <div className={s.infoWrap}>
-        <Heading tag="h4" propsClassName={s.titleName}>
-          {pokemon?.name}
-        </Heading>
-        <div className={s.statWrap}>
-          <div className={s.statItem}>
-            <div className={s.statValue}>{pokemon?.stats?.attack}</div>
-            Attack
+    <>
+      <div role="button" onClick={selectedPokemonClick} className={s.root}>
+        <div className={s.infoWrap}>
+          <Heading tag="h4" propsClassName={s.titleName}>
+            {pokemon?.name}
+          </Heading>
+          <div className={s.statWrap}>
+            <div className={s.statItem}>
+              <div className={s.statValue}>{pokemon?.stats?.attack}</div>
+              Attack
+            </div>
+            <div className={s.statItem}>
+              <div className={s.statValue}>{pokemon?.stats?.defense}</div>
+              Defense
+            </div>
           </div>
-          <div className={s.statItem}>
-            <div className={s.statValue}>{pokemon?.stats?.defense}</div>
-            Defense
+          <div className={s.labelWrap}>
+            {typeList &&
+              typeList.map((item) => {
+                return (
+                  <span key={item} className={s.label}>
+                    {item}
+                  </span>
+                );
+              })}
           </div>
         </div>
-        <div className={s.labelWrap}>
-          {typeList &&
-            typeList.map((item) => {
-              return (
-                <span key={item} className={s.label}>
-                  {item}
-                </span>
-              );
-            })}
+        <div className={s.pictureWrap}>
+          <img src={pokemon?.img} alt={pokemon?.name} />
         </div>
       </div>
-      <div className={s.pictureWrap}>
-        <img src={pokemon?.img} alt={pokemon?.name} />
-      </div>
-    </div>
+      {isOpenModal && <PokemonDescription pokemon={pokemon} onCloseModal={onCloseModal} />}
+    </>
   );
 };
 
