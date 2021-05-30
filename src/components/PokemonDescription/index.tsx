@@ -8,7 +8,7 @@ import { IPokemon } from '../PokemonCard';
 import s from '../PokemonCard/PokemonCard.module.scss';
 
 interface PokemonDescrProps {
-  pokemon: IPokemon;
+  pokemon: IPokemon | undefined;
   onCloseModal: () => void;
 }
 
