@@ -11,18 +11,12 @@ import as from '../../App.module.scss';
 import useDebounce from '../../hook/useDebaunce';
 import useData, { IData } from '../../hook/useData';
 
-interface PokedexPageProps {
-  data: IData;
-  isLoading: string;
-  isError: string;
-}
-
 interface IQuery {
   name?: string;
   limit?: number;
 }
 
-const Pokedex: React.FC<PokedexPageProps> = () => {
+const Pokedex: React.FC = () => {
   const [searchValue, setSearchValue] = useState('');
   const [query, setQuery] = useState<IQuery>({
     limit: 9,
