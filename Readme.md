@@ -9,4 +9,4 @@ SASS\
 Hapi\
 Webpack\
 ESLint\
-Husky\
+Husky
